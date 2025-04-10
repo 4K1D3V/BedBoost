@@ -82,7 +82,7 @@ public final class AdventureAPI {
                 player.addPotionEffect(new PotionEffect(entry.getKey(), entry.getValue().durationTicks, entry.getValue().amplifier, true, false));
             }
             adventure.player(player).sendMessage(WAKE_UP_MESSAGE);
-            showTitle(adventure.player(player));
+            showTitle(adventure.player(player), TITLE, SUBTITLE);
             player.playSound(player.getLocation(), config.getSound(), 1.0f, 1.0f);
             playSparkleAnimation(player);
         }, 2L);
@@ -111,10 +111,9 @@ public final class AdventureAPI {
     }
 
 
-    public void showTitle(final Audience target) {
-        final Title.Times times = Title.Times.times(Duration.ofMillis(500), Duration.ofMillis(3000), Duration.ofMillis(1000));
-        final Title title = Title.title(Component.text("Effect Applied!"), Component.empty(), times);
-        target.showTitle(title);
+    public void showTitle(final net.kyori.adventure.audience.Audience audience, final Component title, final Component subtitle) {
+        Title.Times times = Title.Times.times(Duration.ofMillis(500), Duration.ofMillis(2000), Duration.ofMillis(500));
+        audience.showTitle(Title.title(title, subtitle, times));
     }
 
     public void close() {
