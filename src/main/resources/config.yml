@@ -1,0 +1,14 @@
+effects:
+  speed:
+    duration-ticks: 200
+    amplifier: 0
+  jump:
+    duration-ticks: 100
+    amplifier: 1
+particle:
+  type: "HAPPY_VILLAGER"
+  count: 3
+  offset-x: 0.5
+  offset-y: 1.5
+  offset-z: 0.5
+sound: "BLOCK_NOTE_BLOCK_CHIME"

@@ -1,0 +1,6 @@
+name: BedBoost
+version: '1.0.0'
+main: gg.kite.core.BedBoost
+api-version: '1.21'
+authors: [ KiteGG ]
+website: https://ks.akii.pro
